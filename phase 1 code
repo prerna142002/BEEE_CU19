@@ -1,0 +1,33 @@
+int sensorPin = A0;
+int ledPin=7;
+int sensorValue = 0;
+int brightness = 0;
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(7,OUTPUT);
+}
+
+void loop()
+{
+  sensorValue=analogRead(A0);
+  Serial.println(sensorValue);
+  delay(100);
+ if(sensorValue<1060)
+ {
+   
+digitalWrite(7,HIGH);
+   
+   if(sensorValue<400)
+   {
+    
+analogWrite(7,0);
+     
+   }
+   else
+   {
+     digitalWrite(7,HIGH);
+   }   
+}
+  
+}
